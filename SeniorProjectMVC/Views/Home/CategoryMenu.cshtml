@@ -1,0 +1,14 @@
+﻿@model SeniorProjectMVC.Models.CategoryMenuModel
+
+@{
+    Layout = null;
+}
+
+@if (Model.Categories.Count > 0)  
+{
+
+    foreach (var Category in Model.Categories)
+    {
+        <li><a href="/Categories/@Category.CategoryName">@Category.CategoryName</a></li>
+    }
+}

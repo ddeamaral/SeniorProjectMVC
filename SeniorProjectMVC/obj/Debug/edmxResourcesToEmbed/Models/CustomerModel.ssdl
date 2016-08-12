@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SE414_Group2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customer_Table">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PasswordHash" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PasswordSalt" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOB" Type="varchar" MaxLength="15" />
+    <Property Name="Telephone" Type="varchar" MaxLength="20" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="Newsletter" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SE414_Group2ModelStoreContainer">
+    <EntitySet Name="Customer_Table" EntityType="Self.Customer_Table" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

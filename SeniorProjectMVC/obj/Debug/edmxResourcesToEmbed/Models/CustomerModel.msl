@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SE414_Group2ModelStoreContainer" CdmEntityContainer="SE414_Group2Entities">
+    <EntitySetMapping Name="Customer_Table">
+      <EntityTypeMapping TypeName="SE414_Group2Model.Customer_Table">
+        <MappingFragment StoreEntitySet="Customer_Table">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Newsletter" ColumnName="Newsletter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

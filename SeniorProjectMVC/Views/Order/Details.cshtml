@@ -1,0 +1,67 @@
+﻿@model SeniorProjectMVC.Models.OrderHeader
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderHeader</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ShippingMethod.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShippingMethod.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subtotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subtotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderHeader_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<SeniorProjectMVC.Models.Category>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="row">
+        <div class="large-3 columns end">
+            @Html.ActionLink("Create New", "Create", "Customers", new { @class = "button" })
+        </div>
+    </div>
+
+    <div class="listViewContainer">
+
+
+        <div class="row list-row">
+            
+            <div class="large-3 columns">
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </div>
+            <div class="large-3 columns">
+                @Html.DisplayNameFor(model => model.ParentCategory)
+            </div>
+            <div class="large-3 columns">
+                @Html.DisplayNameFor(model => model.Description)
+            </div>
+            <div class="large-3 columns">
+                Actions
+            </div>
+        </div>
+
+        @foreach (var item in Model)
+        {
+            <div class="row list-row">
+                <div class="large-3 columns">
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </div>
+                <div class="large-3 columns">
+                    @Html.DisplayFor(modelItem => item.ParentCategory)
+                </div>
+                <div class="large-3 columns">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </div>
+                <div class="large-3 columns">
+                    <div class="button-group">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Category_ID }, new { @class = "button" })
+                        @Html.ActionLink("Details", "Details", new { id = item.Category_ID }, new { @class = "button" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Category_ID }, new { @class = "button" })
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/boostrap.min.js")
+    
+</body>
+</html>

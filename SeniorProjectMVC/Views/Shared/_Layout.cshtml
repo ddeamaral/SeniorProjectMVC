@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/Site.css")
+    <script src="https://use.fontawesome.com/692b4de73d.js"></script>
+</head>
+<body>
+
+    <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+            <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+
+                <!-- Close button -->
+                <button class="close-button" aria-label="Close menu" type="button" data-close>
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <!-- Menu -->
+                <ul class="vertical menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home", "http", htmlAttributes: new { @class = "button secondary" })</li>
+                    @if (Request.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("SuperAdmin")))
+                    {
+                        <li><a href="/admin/products">Manage Products</a></li>
+                        <li><a href="/admin/categories">Manage Categories</a></li>
+                    }
+                    
+                </ul>
+
+            </div>
+
+            <div class="off-canvas-content" data-off-canvas-content>
+                <!-- Page content -->
+
+                <div class="top-bar">
+                    <div class="top-bar-left">
+                        <ul class="dropdown menu" data-dropdown-menu>
+                            <li class="menu-text">eCommerce</li>
+                            <li>
+                                <a href="#">Categories</a>
+                                <ul class="menu vertical">
+                                    @*@Html.Partial("~Views/Home/CategoryMenu")*@
+                                    @*@{Html.RenderAction("CategoryMenu", "Home");}*@
+                                    @Html.Action("CategoryMenu", "Home")
+                                </ul>
+                            </li>
+                            @if (Request.IsAuthenticated)
+                            {
+                                <li class="pad-left"><a href="/Account" class="button success">My Account <i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                <li class="pad-left"><a href="/Orders" class="button success">Orders</a></li>
+                                <li class="pad-left"><a href="/Cart" class="button success">Cart&nbsp;<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                            }
+                            else
+                            {
+                                <li class="pad-left"><a href="/Login" class="button success">Login&nbsp;&nbsp;<i class="fa fa-user" aria-hidden="true"></i></a></li>
+                            }
+
+                        </ul>
+                    </div>
+                    <div class="top-bar-right">
+                        <div class="welcome-message top-bar-left">
+                            <p> Welcome <span>@ViewBag.UserName</span>!</p>
+                        </div>
+
+                        <ul class="menu">
+                            <li><input type="search" placeholder="Search"></li>
+                            <li><button type="button" class="button">Search</button></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="body-content">
+                    @RenderBody()
+                </div>
+
+                @*<button type="button" class="button primary" data-toggle="offCanvas">Menu</button>*@
+            </div>
+        </div>
+    </div>
+
+
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+              
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>*@
+    <div class="container body-content">
+    
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Senior Project - Alvaro Soto - Dylan DeAmaral</p>
+        </footer>
+    </div>
+
+  
+
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @Scripts.Render("~/bundles/foundation")
+    @*@Scripts.Render("~/Scripts/boostrap.min.js")*@
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(function () {
+            $(document).foundation();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<SeniorProjectMVC.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p class="text-right">
+        @Html.ActionLink("Create New", "Create",null, htmlAttributes: new { @class= "button primary" })
+    </p>
+   
+        <div class="row">
+            <div class="large-2 columns">
+                @*@Html.DisplayNameFor(model => model.Category.CategoryName)*@
+                <div class="subheader">Category</div>
+            </div>
+            <div class="large-2 columns">
+                @*@Html.DisplayNameFor(model => model.Name)*@
+                <div class="subheader">Product</div>
+            </div>
+            <div class="large-2 columns">
+                @*@Html.DisplayNameFor(model => model.Code)*@
+                <div class="subheader">Product Code</div>
+            </div>
+            <div class="large-2 columns">
+                @*@Html.DisplayNameFor(model => model.Price)*@
+                <div class="subheader">Price</div>
+            </div>
+            <div class="large-3 columns">
+                <div class="subheader">Actions</div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    
+    @foreach (var item in Model) {
+        <div class="row">
+            <div class="large-2 columns">
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </div>
+            <div class="large-2 columns">
+                @Html.DisplayFor(modelItem => item.Name)
+            </div>
+            <div class="large-2 columns">
+                @Html.DisplayFor(modelItem => item.Code)
+            </div>
+            <div class="large-2 columns">
+               @Html.DisplayFor(modelItem => item.FormattedPrice)
+            </div>
+            <div class="large-3 columns">
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }, new { @class="button secondary"}) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID }, new { @class = "button secondary" }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID }, new { @class = "button secondary" })
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    }
+    
+    
+</body>
+</html>

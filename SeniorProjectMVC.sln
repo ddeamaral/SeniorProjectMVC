@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeniorProjectMVC", "SeniorProjectMVC\SeniorProjectMVC.csproj", "{CD4C27EC-F96F-4367-9D96-93D7F96605B1}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SeniorProjectDatabase", "SeniorProjectDatabase\SeniorProjectDatabase.sqlproj", "{2DACCE1E-D835-4207-8126-A58DA02EC0BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD4C27EC-F96F-4367-9D96-93D7F96605B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD4C27EC-F96F-4367-9D96-93D7F96605B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD4C27EC-F96F-4367-9D96-93D7F96605B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD4C27EC-F96F-4367-9D96-93D7F96605B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DACCE1E-D835-4207-8126-A58DA02EC0BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DACCE1E-D835-4207-8126-A58DA02EC0BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DACCE1E-D835-4207-8126-A58DA02EC0BC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2DACCE1E-D835-4207-8126-A58DA02EC0BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DACCE1E-D835-4207-8126-A58DA02EC0BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DACCE1E-D835-4207-8126-A58DA02EC0BC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dddeamaral.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SeniorProjectMVC\\SeniorProjectMVC.csproj
+		SccProjectName1 = SeniorProjectMVC
+		SccLocalPath1 = SeniorProjectMVC
+		SccProjectUniqueName2 = SeniorProjectDatabase\\SeniorProjectDatabase.sqlproj
+		SccProjectName2 = SeniorProjectDatabase
+		SccLocalPath2 = SeniorProjectDatabase
+	EndGlobalSection
+EndGlobal

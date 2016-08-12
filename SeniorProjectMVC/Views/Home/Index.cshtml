@@ -1,0 +1,31 @@
+﻿@model SeniorProjectMVC.Models.Customer
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    @Styles.Render("~/Content/css");
+    @Scripts.Render("~/bundles/modernizr");
+    ViewBag.Title = "Welcome!";
+}
+
+
+
+
+
+@if (ViewBag.FeaturedProducts != null)
+{
+
+    <div class="featured-products">
+
+
+        @foreach (var product in ViewBag.FeaturedProducts)
+        {
+            <div class="large-4 columns">
+                <a href="@product.PageURL"><img src="@product.ProductImage" alt="@product.ProductAlt" /></a>
+            </div>
+        }
+
+
+
+
+    </div>
+}

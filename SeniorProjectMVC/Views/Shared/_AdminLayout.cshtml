@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body onload="$(document).foundation();">
+
+
+    <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+            <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+                <div class="off-canvas-content" data-off-canvas-content></div>
+
+                <ul class="vertical menu">
+                    <li>@Html.ActionLink("Home","Index","Home","http", htmlAttributes: new { @class="button secondary" })</li>
+                    <li><a href="/admin/products">Manage Products</a></li>
+                    <li><a href="/admin/categories">Manage Categories</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="button primary" data-toggle="offCanvas">Menu</button>
+
+    <div class="body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @Scripts.Render("~/bundles/foundation")
+    @*@Scripts.Render("~/Scripts/boostrap.min.js")*@
+    @RenderSection("scripts", required: false)
+    
+</body>
+</html>
